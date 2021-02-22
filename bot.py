@@ -459,6 +459,7 @@ class ModmailBot(commands.Bot):
         self._connected.set()
 
     async def on_ready(self):
+        await client.change_presence(status=discord.Status.idle, activity=discord.Game('DM to contact staff!'))
         """Bot startup, sets uptime."""
 
         # Wait until config cache is populated with stuff from db and on_connect ran
